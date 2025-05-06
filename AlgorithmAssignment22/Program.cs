@@ -10,28 +10,48 @@ namespace AlgorithmAssignment22
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MultiplesOfThreeAndFive(10));
+            List<int> numbers = new List<int>();
+           
+           
+            for (int i = 1; i <= 100; i++)
+            {
+                numbers.Add(i);
+            }
+
+            MultiplesOfThreeAndFive(numbers);
+           
+
+        }
+
+        public  static void MultiplesOfThreeAndFive(List<int> nums)
+        {
+            
+
+            foreach (var number in nums)
+            {
+                if (number % 3 == 0 && number % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (number % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (number % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else  
+                {
+                    Console.WriteLine(number);
+                }
+                
+
+            }
             
         }
-
-        public  static int MultiplesOfThreeAndFive(int num)
-        {
-            int sum = 0;
-
-            for (int i = 1; i < num; i++)
-            {
-                if (i % 3 == 0 || i % 5 == 0)
-                {
-                    sum += i;
-                }
-            }
-            return sum;
-        }
     }
 
 
-    class MyClass
-    {
-
-    }
+    
 }
